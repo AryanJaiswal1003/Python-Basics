@@ -1,0 +1,42 @@
+# TODO-1: Import and print the logo from art.py when the program starts.
+from art import logo
+print(logo)
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# TODO-2: What happens if the user enters a number/symbol/space?
+# TODO-3: Can you figure out a way to restart the cipher program?
+def cipher_text(original_text, shift_amount, decision):
+    output = ""
+    for letter in original_text:
+        if letter not in alphabet:
+            output += letter
+        else:
+            if decision == "encode":
+                encryption = alphabet.index(letter) + shift_amount
+                encryption %= len(alphabet)
+                output += alphabet[encryption]
+            else:
+                encryption = alphabet.index(letter) - shift_amount
+                encryption %= len(alphabet)
+                output += alphabet[encryption]
+    for lo_go in range(5):
+        if decision == "encode":
+            print("*************** ENCODING!!!! ******************") , 5
+        else:
+            print("*************** DECODING!!!! ******************") , 5
+    print(f"Your {decision}d Result is = {output}")
+
+process = False
+while not process:
+    direction = input("Type 'Encode' for Encrypting & 'Decode' for Decrypting a Message = \n").lower()
+    message = input("Enter Your Message = \n").lower()
+    shift = int(input("Enter Spaces you want to Shift your Message = \n"))
+    cipher_text(message, shift, direction)
+    do = input('''Type "Continue" to Continue Process. Otherwise Type "End" to Stop = \n''').lower()
+
+    if do == "continue":
+        continue
+    else:
+        process = True
+        print("****************** THANKYOU!!!! *********************")
