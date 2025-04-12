@@ -35,10 +35,10 @@ def clear_drawing():
 
 
 screen.listen()
-screen.onkey(key="w" , fun=forward_movt)
-screen.onkey(key="s" , fun=backward_movt)
-screen.onkey(key="a" , fun=counter_clockwise_movt)
-screen.onkey(key="d" , fun=clockwise_movt)
-screen.onkey(key="c" , fun=clear_drawing)
+screen.onkey(key="Up" , fun=forward_movt)
+screen.onkey(key="Down" , fun=backward_movt)
+screen.onkey(key="Left" , fun=counter_clockwise_movt)
+screen.onkey(key="Right" , fun=clockwise_movt)
+screen.onkey(key="Delete" , fun=clear_drawing)
 
 screen.exitonclick()
