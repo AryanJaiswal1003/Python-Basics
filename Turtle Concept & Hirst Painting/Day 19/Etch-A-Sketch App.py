@@ -18,12 +18,12 @@ def backward_movt():
     tim.backward(20)
 
 def counter_clockwise_movt():
-    tim.left(20)
+    tim.left(10)
     #Also --> new_heading = tim.heading() + 20
     #         tim.setheading(new_heading)
 
 def clockwise_movt():
-    tim.right(20)
+    tim.right(10)
     # Also --> new_heading = tim.heading() - 20
     #         tim.setheading(new_heading)
 
