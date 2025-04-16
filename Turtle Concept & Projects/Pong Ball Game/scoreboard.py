@@ -1,4 +1,3 @@
-from time import sleep
 from turtle import Turtle
 
 #TODO-8: Score keeping
