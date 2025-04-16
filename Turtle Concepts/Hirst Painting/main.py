@@ -39,34 +39,34 @@ for _ in range(109):
         print(ab)
 
 
-""" ****** [Method-2] ****** """
-def hirst_painting(space):
-    for _ in range(space):
-        for _ in range(space):
-            tim.fd(50)
-            tim.dot(20 , random.choice(color_output_list))
-        tim.backward(space * 50)
-        tim.left(90)
-        tim.fd(50)
-        tim.right(90)
-
-hirst_painting(10)
-
-
-""" ****** [Method-3] ****** """
-number_of_dots = 100
-
-for dot_count in range(1 , number_of_dots + 1):
-    tim.dot(20 , random.choice(color_output_list))
-    tim.forward(50)
-
-    if dot_count % 10 == 0:
-        tim.setheading(90) #or --> tim.setheading(90)
-        tim.forward(50)
-        tim.setheading(180)
-        tim.forward(500)
-        tim.setheading(0)
-
+# """ ****** [Method-2] ****** """
+# def hirst_painting(space):
+#     for _ in range(space):
+#         for _ in range(space):
+#             tim.fd(50)
+#             tim.dot(20 , random.choice(color_output_list))
+#         tim.backward(space * 50)
+#         tim.left(90)
+#         tim.fd(50)
+#         tim.right(90)
+#
+# hirst_painting(10)
+#
+#
+# """ ****** [Method-3] ****** """
+# number_of_dots = 100
+#
+# for dot_count in range(1 , number_of_dots + 1):
+#     tim.dot(20 , random.choice(color_output_list))
+#     tim.forward(50)
+#
+#     if dot_count % 10 == 0:
+#         tim.setheading(90) #or --> tim.setheading(90)
+#         tim.forward(50)
+#         tim.setheading(180)
+#         tim.forward(500)
+#         tim.setheading(0)
+#
 tim.hideturtle()
 screen = Screen()
 screen.exitonclick()
