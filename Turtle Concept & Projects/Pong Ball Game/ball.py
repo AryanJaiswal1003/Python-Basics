@@ -12,7 +12,7 @@ class Ball(Turtle):
         super().__init__()
         self.color(random.choice(colors))
         self.shape('circle')
-        self.shapesize(stretch_wid=1 , stretch_len=1)
+        self.shapesize(stretch_wid=1 , stretch_len=1) #Turtle is 20 * 20 pixels
         self.setposition(x=0 , y=0)
         self.penup()
         self.x_move = 10 #Ball movt across x_axis
