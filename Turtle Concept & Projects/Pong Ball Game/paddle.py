@@ -14,8 +14,8 @@ class Paddle(Turtle): #Created a Turtle Superclass
         self.goto(x=x_cor , y=y_cor)
 
     def up(self):
-        new_x = self.ycor() + 50
-        self.goto(self.xcor() , new_x)
+        new_y = self.ycor() + 50
+        self.goto(self.xcor() , new_y)
 
     def down(self):
         new_y = self.ycor() - 50
