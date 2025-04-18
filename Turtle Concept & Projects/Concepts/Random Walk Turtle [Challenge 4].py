@@ -1,4 +1,4 @@
-"""Challenge - 4: Random Walk with Random Colour"""
+"""Challenge - 4: Random Walk with Random Color"""
 import random
 from turtle import Turtle , Screen
 
