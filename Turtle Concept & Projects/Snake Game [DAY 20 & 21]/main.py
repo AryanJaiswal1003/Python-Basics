@@ -19,7 +19,6 @@ snake = Snakes()
 food = Food()
 scoreboard = ScoreBoard()
 
-
 screen.listen()
 screen.onkey(key="Up", fun=snake.up)
 screen.onkey(key="Down", fun=snake.down)
@@ -29,7 +28,7 @@ screen.onkey(key="Right", fun=snake.right)
 game_on = True
 while game_on:
     screen.update()  ##screen.tracer()
-    time.sleep(0.2)  # --> pauses program's execution for specified number of seconds, allowing delays/timed actions.
+    time.sleep(0.2)  # --> pauses program's execution for a specified number of seconds, allowing delays/timed actions.
     snake.move()
 
     #TODO-5: Detecting Collision with Food using Turtle.distance function
@@ -41,8 +40,9 @@ while game_on:
 
     #TODO-7: Detecting collision with Wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_on = False
-        scoreboard.game_over()
+        #scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
 
     #TODO-9: Detecting Collision with Snake --> if head collides with any segment in tail --> using slicing
 
@@ -51,9 +51,12 @@ while game_on:
     --> stop: is the index where the slice ends (exclusive).
     --> step: determines how many elements to skip between indices (optional)."""
 
-    for segment in snake.segments[1:]: #Slicing off the head segment from collision error
-        if snake.head.distance(segment) < 10:  # Check if a segment is too close to any segment
-            scoreboard.game_over()
-            game_on = False  # Exit the loop as collision is already detected
+    for segment in snake.segments[1:]: #Slicing off the head segment from a collision error
+        if segment == snake.head:
+            pass
+        elif snake.head.distance(segment) < 10:  # Check if a segment is too close to any segment
+            #game_on = False --> Exit the loop as collision is already detected
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()

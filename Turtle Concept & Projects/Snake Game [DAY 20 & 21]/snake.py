@@ -30,6 +30,13 @@ class Snakes:
         self.snake.goto(coordinate)
         self.segments.append(self.snake)
 
+    def reset(self): #Day 24
+        for char in self.segments:
+            char.goto(1000 , 1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def extend(self): #adds a new segment to the snake
         self.add_segment(coordinate=self.segments[-1].position())
 

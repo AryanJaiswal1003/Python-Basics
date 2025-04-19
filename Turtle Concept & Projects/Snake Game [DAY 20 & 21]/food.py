@@ -20,14 +20,14 @@ class Food(Turtle): #here Turtle is the superclass
         rand_color = random.choice(colors)
         self.color(rand_color)
         self.speed("fastest")
-        random_x = random.randint(-280 , 280) #size of the screen is 600 * 600 i.e. x & y-axis extends from -300 to 300 coordinates
+        random_x = random.randint(-280 , 280) #the size of the screen is 600 * 600 i.e., x & y-axis extends from -300 to 300 coordinates
         random_y = random.randint(-280 , 280) #since food if generated at coordinates 300 will result to collision with wall.
         self.goto(x=random_x , y=random_y)
         self.refresh()
 
     # TODO-5: Detecting Collision with Food using Turtle.distance function & shifting food to next random location
     def refresh(self):
-        random_x = random.randint(-280, 280)  # size of the screen is 600 * 600 i.e. x & y-axis extends from -300 to 300 coordinates
+        random_x = random.randint(-280, 280)  # the size of the screen is 600 * 600 i.e., x & y-axis extends from -300 to 300 coordinates
         random_y = random.randint(-280, 260)
         rand_color = random.choice(colors)
         self.color(rand_color)
