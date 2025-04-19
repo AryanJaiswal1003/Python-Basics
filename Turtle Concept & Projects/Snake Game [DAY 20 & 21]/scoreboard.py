@@ -14,7 +14,8 @@ class ScoreBoard(Turtle):
         self.goto(x= 0 , y= 270)
         self.color("white")
         self.score = 0
-        self.high_score = 0
+        with open("data.txt") as file: #Only reading the file [DAY 24]
+            self.high_score = int(file.read()) #converts the string into int
         self.update_scoreboard()
 
     def update_scoreboard(self):
@@ -24,8 +25,11 @@ class ScoreBoard(Turtle):
     def reset(self): #Adding High Score function to the program [Day 24]
         if self.score > self.high_score:
             self.high_score = self.score
+            with open("data.txt" , mode="w") as file: #Writing new data into the docx
+                file.write(f"{self.high_score}")
         self.score = 0
         self.update_scoreboard()
+
 
     # def game_over(self):
     #     self.goto(x= 0 , y= 0)
